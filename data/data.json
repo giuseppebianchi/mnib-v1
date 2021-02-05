@@ -121,7 +121,7 @@
       "html_body": "views/html/projects/loud.html"
    },
    {
-      "name": "mynameisbianchi.it",
+      "name": "mynameisbianchi.com",
       "url_name": "mynameisbianchi",
       "subtitle": "My works, my experiences, my ideas",
       "category": "NodeJS - ExpressJS Web App",
