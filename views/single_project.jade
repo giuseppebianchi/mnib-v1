@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    #video_element(style="height:80%")
+      .huge-title
+        .col-sm-12
+          h1.title-page=item.name
+          p=item.subtitle
+      .shade
+  
+      #background(style="background-image: url("+item.img+");")
+     
+    .wrapper
+      
+      #ProjectPage.container0(style="background:#fff")
+        
+        //HTML Body
+        !{html}
+        // End of Body
+
+        //Footer
+        .parallax1
+          // Start Content
+          .content.centered
+            //p See all projects
+            a.button-white(href="/projects") All Projects
+        // End of Footer

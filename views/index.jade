@@ -1,0 +1,102 @@
+extends layout
+
+block content
+    #video_element
+      .huge-title
+        .col-sm-12
+          img.headshot(src=profileimage, alt='Giuseppe Bianchi')
+          |         
+          h2.nameuser Giuseppe Bianchi
+          |         
+          .social-left(style='width: 100%')
+            a(href=Instagram, target='_blank')
+              i.icon-instagram-filled
+            |                                        
+            a(href=Github, target='_blank')
+              i.icon-github-circled
+            |                     
+            a(href=Linkedin, target='_blank')
+              i.icon-linkedin
+           p CS Student and Front-End and Mobile Apps Developer, writing code for Gran Sasso Science Institute 
+        
+      .shade
+  
+      //#background
+      ul.cb-slideshow
+        li
+         div
+        li
+         div
+        li
+         div
+      
+    .wrapper
+      
+      .container0
+        
+        section
+          // ABOUT SECTION
+          #AboutMe.content.centered
+            h2 About Me
+            |                     
+            p Hello, I'm Giuseppe Bianchi and welcome into my personal space. I'm a Front-End and Mobile Apps Developer, writing code for Gran Sasso Science Institute and studying CS at University of L'Aquila, Italy.
+            p
+              | 
+            |                     
+            p
+              a.button-reverse(href="about") Read More
+            br 
+            br          
+            .social-left(style='width: 100%')
+              a(href=Twitter, target='_blank')
+                i.icon-twitter
+              |  
+              a(href=Instagram, target='_blank')
+                i.icon-instagram-filled
+              |  
+              a(href=Linkedin, target='_blank')
+                i.icon-linkedin
+              |  
+              a(href=Github, target='_blank')
+                i.icon-github-circled
+              |  
+              a(href=Codepen, target='_blank')
+                i.icon-codepen
+            p Download my 
+              a.link(href=resume, target="_blank") Resume
+              |  or 
+              a.link(href=cv, target="_blank") CV 
+            br
+        // End of Content
+        //.parallax1//(style="background-image: url(img/twitter.jpg)")
+        .parallax1
+          // Start Content
+          #Tweets.content.centered
+            h2(style='text-transform: none')
+             i.icon-twitter
+            //img.b-lazy(src=twitterimage, data-src=twitterimage, alt='Giuseppe Bianchi')
+            h5 @mynameisbianchi
+            h4= twitterBio
+            h5= location
+            .tweets.owl-carousel
+              -if(tweets)
+                each val in tweets
+                  .tweet-box
+                   p= val.text
+                   if val.entities.media
+                    a.bmodal(href="#", data-img=val.entities.media[0].media_url)
+                     cite Show Image
+                   //cite ciao
+                .tweet-box
+                  p
+                   a(href="/twitter") Read More Tweets
+                  // End of Content
+        
+        section
+          // Start Content
+          #Contact.content.centered
+            h2 Contact Me
+            |                 
+            a.button(href="/about#Contact") Leave me a message
+            // End Contact Form
+          // End Content

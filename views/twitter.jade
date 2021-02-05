@@ -1,0 +1,76 @@
+extends layout
+
+block content
+    script(type="text/javascript", src="https://platform.twitter.com/widgets.js")
+    #video_element
+      .huge-title.twitter-cover
+        .col-sm-12
+          .owl-cover
+            div.twitter-front
+              img.headshot(src=profileimage, alt='Giuseppe Bianchi')
+              |         
+              h2.nameuser Giuseppe Bianchi
+              h4 @mynameisbianchi
+            div.twitter-back
+              h4=twitterBio
+  
+      #background(style="background-image: url(#{twitterCover}); background-attachment: fixed;")
+      
+    .wrapper
+      
+      .container0
+        section#TwitterData
+          .content
+            .row
+              .col-sm-4
+                h2= status
+                h3 Tweets
+                hr
+              .col-sm-4
+                h2= following
+                h3 Following
+                hr
+              .col-sm-4
+                h2= followers
+                h3 Followers
+                hr
+            .row
+              .col-sm-6
+                a.button.tbutton(href="https://twitter.com/intent/follow?screen_name=mynameisbianchi") FOLLOW ME
+              .col-sm-6
+                a.button.tbutton(href="https://twitter.com/intent/tweet?screen_name=mynameisbianchi&text=Hello :)") TWEET ME
+        
+        .parallax1(style="background-image: url(#{twitterParallax});")
+          // Start Content
+          #Tweets.content.centered
+            h2(style='text-transform: none')
+             i.icon-twitter
+        section#TwitterTimeline
+          // ABOUT SECTION
+          .content.centered
+            hr.no-color             
+            each val in tweets
+              .timelineTweet
+                if val.entities.media
+                  .tweetMedia.b-lazy(data-src=val.entities.media[0].media_url)
+                    .overlayTweetBackground
+                      .overlayTweet
+                        h3
+                          i.icon-twitter 
+                          !{val.text}
+                else
+                  h3
+                    i.icon-twitter 
+                    !{val.text}
+              hr
+            
+        // End of Content
+        //.parallax1(style="background-image: url(img/twitter.jpg); background-position: center top")
+        .parallax1
+          // Start Content
+          #Tweets.content.centered
+            h2(style='text-transform: none')
+             i.icon-twitter
+            h3(style="color: #52ADF1; font-weight: 300") This is my personal Twitter timeline, inspired by the Twitter Mobile version.
+            h3(style="color: #52ADF1; font-weight: 300") I hope you like it.  
+            // End of Content

@@ -1,0 +1,130 @@
+<section>
+	<div class="content centered">
+		<h2>PROJECT DESCRIPTION</h2>
+		<h4 class="centered subtitle">Web Planner Path Calculator</h4>
+		<p class="text-justify"><strong>Customers:</strong></p>
+		<ul>
+		<li><p class="text-justify"><strong>Dr. Daniele Spinosi</strong>, IT Manager, Micron Inc., Avezzano, Italy</p></li>
+		<li><p class="text-justify"><strong>Prof. Henry Muccini</strong>, Univerity Of L'Aquila, Italy</p></li>
+		</ul>
+		<p class="text-justify">The <strong>Planner Path Calculator</strong> is a sub-system of the <strong>Global Planning System</strong> that is used to store and extract planning data modeled as a graph. A <strong>graph</strong> is used to model different manufacturing processes, for example a <strong>Tree</strong> can be used to model the process of making a product as the result of the assembly of multiple components. A Graph is represented in terms of: </p>
+		<p class="text-left"> - <strong>Vertex</strong> that is the process node and has a Name.</p>
+		<p class="text-left"> - <strong>Edge</strong> that connects vertices from source vertex to destination vertex.</p>
+		<br>
+		<br>
+		<img src="/projects/ppc/graph.png" class="img-block" style="margin: 0 auto">
+		<p></p>
+		<p></p>
+		<p class="text-justify">Above the conceptual data model. The model must support attributes so that we can associate attributes to vertices and edges. <strong>Attributes</strong> are defined in the <strong>AttributeDefinition</strong> structure. This example includes only two AttributeDefinition (Cost, PTime) but the system should allow the definition of an open set of attributes.</p>
+	</div>
+</section>
+<div class="parallax1">
+	<div class="content centered">
+		<h2>WORK DESCRIPTION</h2>
+		<h4 class="centered subtitle">What the system has to do</h4>
+		<p class="text-justify">The PPC must have a GUI that generates a tree structure using the following parameters:</p>
+		<ul>
+		<li><p class="text-justify"><strong>Split SIze</strong>: how many vertices must be generated from a given vertex.</p></li>
+		<li><p class="text-justify"><strong>Depth SIze</strong>: the depth of the given tree.</p></li>
+		<li><p class="text-justify"><strong>AttributeList</strong>: to specify the list of attributes to associate to Vertex and Edge.</p></li>
+		<li>
+			<p class="text-justify"><strong>AttributeValueGenerationRule</strong>: to tell the engine how to generate numbers.</p>
+			<p class="text-justify">In the example above the SplitSize=2 and Depth=3.</p>
+		</li>
+		</ul>
+		<p class="text-justify">The GUI can be used to generate a tree when the “Build Tree” button is pressed. The result is saved in the database. The system needs to be compliant with the database schema provided in this document.</p>
+		<p class="text-justify">It can be also used to retrieve from the database a Tree previously stored: users can select 2 Vertices A and B, and the system must return the list of vertices from A to B among with the SUM of each attribute. The GUI will also display the time the system took to make this calculation.</p>
+		<p class="text-justify">The database schema provided is based on MSSQL; in case the team selects a different database they will need to adapt the schema to the selected technology. The team will need to motivate the database technology selection as part of their design decisions.</p>
+	</div>
+</div>
+<section>
+	<div class="content centered">
+		<h2>CONSTRAINTS</h2>
+		<h4 class="centered subtitle">Standards, constraints and quality attributes</h4>
+		<p class="text-justify">The system shall be compliant with the following standards, constraints and quality attributes:</p>
+		<br>
+		<p class="text-justify"><strong>Company technology roadmap requires:</strong></p>
+		<ul>
+			<li><p class="text-justify">The GUI to be implemented as a Web interface with HTML5 technology.</p></li>
+			<li><p class="text-justify">To adopt MSSQL as database technology. Other DBMS can be selected provided that it is open-­source.</p></li>
+		</ul>
+		<br>
+		<p class="text-justify"><strong>Performance:</strong></p>
+		<ul>
+			<li><p class="text-justify">Given that this system will be queried by a production system, it should be “fast” to return the result.</p></li>
+			<li><p class="text-justify">The system must be able to handle Trees up to 2 million Vertices.</p></li>
+			<li><p class="text-justify">We expect a range of 10 to 100 concurrent users that will use this interface concurrently, therefore the system’s architecture should be able to handle the pick load without performance impact.</p></li>
+		</ul>
+		<br>
+		<p class="text-justify"><strong>Security:</strong></p>
+		<ul>
+			<li><p class="text-justify">no need to secure the system because it will be embedded in a secured web environment.</p></li>
+		</ul>
+	</div>
+</section>
+<div class="parallax1">
+	<div class="content centered">
+		<h2>FURTHER INFORMATION</h2>
+		<h4 class="centered subtitle">More information came out after interviews and questions</h4>
+		<p>We found out more non-functional requirements:</p>
+		<ul>
+			<li><p class="text-justify">System response time should be 30 seconds for trees of 1 millions verteces and 60 seconds for 2 millions verteces, being carefull about implementation costs of a scaling solution.</p></li>
+			<li><p class="text-justify">Attributes values can be float or integer.</p></li>
+			<li><p class="text-justify">There is no need to modify trees.</p></li>
+			<li><p class="text-justify">System must be optimized about extraction time.</p></li>
+			<li><p class="text-justify">Each user creates a tree once a week and they are going to consulte it three times a day.</p></li>
+			<li><p class="text-justify">There will be usually three attibutes on verteces and three attributes on edges.</p></li>
+			<li><p class="text-justify">The system will be run on Windows environment.</p></li>
+		</ul>
+	</div>
+</div>
+<section>
+	<div class="content centered">
+		<h2>UI DESIGN</h2>
+		<h4 class="centered subtitle">Graphic Template</h4>
+		<p><strong>PPC User Interface</strong> was made using <strong>Bootstrap</strong> framework. Every request uses AJAX and template are rendered by using <strong>Mustache</strong> framework</p>
+		</div>
+	</div>
+</section>
+<div class="parallax1">
+	<div class="content centered">
+		<h2>SOLUTION</h2>
+		<h4 class="centered subtitle">How the problem was solved</h4>
+		<p class="text-justify">After analyzing functional and non-functional requirements and the further information, the problem was solved using this following approach:</p>
+		<ul>
+			<li><p class="text-justify">To satisfy the non-functional requirements about a faster calculation of path, I though to store in each vertex their own ancestors. So I wrote a recursive function to build tree and its verteces using a "Depth-First Search" logic.</p></li>
+			<li><p class="text-justify">The solution of building a tree just using the parent reference would have been faster when creating, because documents are smaller, but not good when the user should select two verteces to calculate path. With 2 millions and more verteces, selecting the destination node is not so easy. Respecting the non-functional requirement about extraction and calculation performace I decided to spend more time creating the tree with a solid structure.</p></li>
+			<li><p class="text-justify">Working with a lot of instances we choose to adopt MongoDB as database, a NoSQL document-oriented solution, because of horizontal scaling.</p></li>
+			<li><p class="text-justify">User competition are managed by using NGINX and creating a permanent queue for creation requests.</p></li>
+		</ul>
+		<br>
+		<p class="text-justify"><strong>Result:</strong></p>
+		<ul>
+			<li><p class="text-justify">When user selects the source vertex, he can choose destionation vertex in a list to calculate path. This feature improves user experience.</p></li>
+			<li><p class="text-justify">Retrieve performance are amazing and calculation times are the smallest of the course's groups (0 - 5 ms).</p></li>
+		</ul>
+		<hr class="no-color">
+		<p>If you would like to see how the system works, check the source code on my Github page.</p>
+		<a href="https://github.com/giuseppebianchi/Web-Planner-Path-Calculator" class="button-white" target="_blank"><i class="icon-github-circled"></i> PPC GitHub</a>
+	</div>
+</div>
+<section>
+	<div class="content centered">
+	<h2>TECNOLOGIES</h2>
+		<h4 class="centered subtitle">What the system uses</h4>
+		<div class="row">
+			<div class="col-md-4">
+				<img src="/projects/bianchii/node.png" style="margin: 40px 0">
+				<p class="text-justify"><a href="https://nodejs.org/en/" target="_blank">Node.js</a> is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.</p>
+			</div>
+			<div class="col-md-4">
+				<img src="/projects/bianchii/express.png" style="margin: 85px 0 53px">
+				<p class="text-justify"><a href="http://expressjs.com/" target="_blank">Express</a> is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
+			</div>
+			<div class="col-md-4">
+				<img src="/projects/ppc/mongo.png" style="margin: 50px 0 45px">
+				<p class="text-justify"><a href="https://www.mongodb.com/" target="_blank">MongoDB</a> is a free and open-source cross-platform document-oriented database program, which uses JSON-like documents with schemas.</p>
+			</div>
+		</div>
+	</div>
+</section>

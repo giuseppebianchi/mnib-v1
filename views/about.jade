@@ -1,0 +1,233 @@
+extends layout
+
+block content
+    #video_element(style="height:80%")
+      .huge-title
+        .col-sm-12
+          h1.title-page About Me
+          span |
+          p(id="links")
+            a.goToSection(href="#AboutMe") Who I Am
+            span  | 
+            a.goToSection(href="#Skills") Skills
+            span  | 
+            a.goToSection(href="#Experience") Experience
+            span.new-line   | 
+            a.goToSection(href="#Projects") Projects
+            span  | 
+            a.goToSection(href="#Twitter") Twitter
+            span  | 
+            a.goToSection(href="#Contact") Contact
+
+      .shade
+
+      #background(style="background-image: url(img/aboutme.jpg);")
+
+    .wrapper
+
+      .container0
+        section
+          // ABOUT SECTION
+          #AboutMe.content.centered
+            h2 Who I Am
+            span
+            !{biography}
+            br
+            .social-left(style='width: 100%')
+              a(href=Twitter, target='_blank')
+                i.icon-twitter
+              span 
+              a(href=Instagram, target='_blank')
+                i.icon-instagram-filled
+              span 
+              a(href=Linkedin, target='_blank')
+                i.icon-linkedin
+              span 
+              a(href=Github, target='_blank')
+                i.icon-github-circled
+              span 
+              a(href=Codepen, target='_blank')
+                i.icon-codepen
+            p
+              a.goToSection.button-reverse(href="#Contact") Contact Me
+            hr
+            h4.centered(style="font-size: 2em;") When I'm not coding
+            p I like to travel, living new experiences in different places, knowing and talking with new people of different culture, feeling free. When I can't go around I like listening to music or playing my drum set or guitar.
+            figure
+              img(src="img/berlin.jpg")
+            hr
+            a.button-reverse(href="about/stories") Stories
+        // End of Content
+        .parallax1(style="background-image: url(img/macbook.jpg)")
+          // Start Content
+          #Skills.content.centered
+            h2(style='text-transform: none') SKILLS
+            p This section is coming soon. :)
+            // End of Content
+        section
+          // EDUCATION SECTION
+          #Experience.content.centered
+            h2 Experience
+            a.button-reverse(href=resume, target="_blank") Download Resume
+            a.button-reverse(href=cv, target="_blank") Download CV
+            hr.no-color
+            .row
+              .col-md-3.col-md-offset-3
+                h4 Education
+              each item, index in Education
+                if (index > 0)
+                  .cv-item
+                    .col-md-5.col-md-offset-6
+                      h5.title=item.name
+                      h5.subtitle=item.location
+                      small=item.date
+                      p.desc=item.desc
+                else
+                  .cv-item
+                    .col-md-5
+                      h5.title=item.name
+                      h5.subtitle=item.location
+                      small=item.date
+                      p.desc=item.desc
+            hr
+            .row
+              .col-md-3.col-md-offset-3
+                h4 Work
+              each item, index in Work.cv
+                if (index > 0)
+                  .cv-item
+                    .col-md-5.col-md-offset-6
+                      h5.title=item.company
+                      small=item.location
+                      |  | 
+                      a.resource(href=item.link, target="_blank") Website
+                      - var works=item.company_works
+                      ul.list-cv-items
+                        each work, i in works
+                          li
+                            h5.subtitle=work.subject
+                            small=work.date
+                            p.desc
+                              !{work.description}
+                            if (work.resource != "")
+                              p
+                                a.resource(href=work.resource, target="_blank") Resource
+                else
+                  .cv-item
+                    .col-md-5
+                      h5.title=item.company
+                      small=item.location
+                      |  | 
+                      a.resource(href=item.link, target="_blank") Website
+                      - var works=item.company_works
+                      ul.list-cv-items
+                        each work, i in works
+                          li
+                            h5.subtitle=work.subject
+                            small=work.date
+                            p.desc
+                              !{work.description}
+                            if (work.resource != "")
+                              p
+                                a.resource(href=work.resource, target="_blank") Resource
+
+            hr
+            .row
+              .col-md-3.col-md-offset-3
+                h4 Language
+              .cv-item
+                .col-md-5
+                  h5.title Italian
+                  h6.subtitle Native
+              .cv-item
+                .col-md-5.col-md-offset-6
+                  h5.title English
+                  h6.subtitle Good
+        // End of Content
+        .parallax1(style="background-image: url()")
+          // Start Content
+          #Projects.content.centered
+            h2(style='text-transform: none') PROJECTS
+            <p>If you want to see my personal projects check the link below.</p>
+            a.button-white(href="/projects") Projects
+            //p I'm sorry, this section is still under contruction. I'm trying to make cool template to show my projects.
+            // End of ContenT
+        section(style="padding-bottom: 40px")
+          // EDUCATION SECTION
+          #Twitter.content.centered
+            h2(style="color: #52ADF1") Twitter
+            p Read my tweets here below and, if you want to see more, visit my personal 
+             a(href="/twitter")  Twitter Timeline 
+             | made by me.
+            p
+              a.button(href="/twitter", style="color: #52ADF1") Take a look
+        // End of Content
+        .parallax1(style="background-image: url()")
+          // Start Content
+          #Tweets.content.centered
+            h2(style='text-transform: none')
+             i.icon-twitter
+            //img.b-lazy(src=twitterimage, data-src=twitterimage, alt='Giuseppe Bianchi')
+            h5 @mynameisbianchi
+            h4= twitterBio
+            h5= location
+            .tweets.owl-carousel
+              -if(tweets)
+                each val in tweets
+                  .tweet-box
+                   p= val.text
+                   if val.entities.media
+                    a.bmodal(href="#", data-img=val.entities.media[0].media_url)
+                     cite Show Image
+                   //cite ciao
+                .tweet-box
+                  p
+                   a(href="/twitter") Read More Tweets
+                  // End of Content
+
+        section
+          // Start Content
+          #Contact.content.centered
+            h2 Contact Me
+            p
+              | You can find me on social networks and other platforms or send me a message with the form here below. I'll reply to the address that you will write in the email field.
+            br
+            .social-left(style='width: 100%')
+              a(href=Twitter, target='_blank')
+                i.icon-twitter
+              span
+              a(href=Instagram, target='_blank')
+                i.icon-instagram-filled
+              span
+              a(href=Linkedin, target='_blank')
+                i.icon-linkedin
+              span
+              a(href=Github, target='_blank')
+                i.icon-github-circled
+              span
+              a(href=Codepen, target='_blank')
+                i.icon-codepen
+            p
+            p Let's keep in touch
+            // Begin Contact Form
+            form#contact_form(action='contact/send', method='post')
+              p
+                label Name
+                span
+                input#name.requiredField.name(type='text', name='name', value='')
+              span
+              p
+                label Email Address
+                span
+                span
+                input#email.requiredField.email(type='text', name='email', value='')
+              span
+              p
+                label(style='margin-bottom: 10px') Your Message
+                span
+                textarea#message.requiredField.message(name='message', rows='8', cols='30')
+              span
+              p
+                input#submitted.submit(name='submitted', value='Submit', type='submit')
+            // End Contact Form
+          // End Content

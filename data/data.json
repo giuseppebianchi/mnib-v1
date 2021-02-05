@@ -1,0 +1,210 @@
+{  "description": "Hello, I'm Giuseppe Bianchi and welcome into my personal space. I'm a Front-End and Mobile Apps Developer, writing code for Gran Sasso Science Institute and studing CS at University of L'Aquila, Italy. ",
+   "bio":"<p>Hello, I'm <strong>Giuseppe Bianchi</strong> and welcome into my personal space.</p><p> I'm a <strong>Front-End</strong> and <strong>Mobile Apps Developer</strong> and I study Computer Science at <strong>University of L'Aquila</strong>, Italy. My graduation is not so far, but, even if I have to complete my studies, I'm currently working for Gran Sasso Science Institute as Web Developer, keeping learning new stuff by myself or studying in deep arguments of exams taken. <br> Now I'm learning <strong>ReactJS</strong>, to build single-page web application, and <strong>Swift</strong> language, to develop <strong>iOS</strong> native apps, because with Apache Cordova or React Native I can't reach what I really want to do.</p>",
+   "img":"/img/giuseppe.jpg",
+   "social":{
+      "facebook":"http://facebook.com/bianchi13",
+      "instagram":"http://instagram.com/giuseppe_bianchi",
+      "twitter":"http://twitter.com/mynameisbianchi",
+      "twitter_username": "mynameisbianchi",
+      "github":"http://github.com/giuseppebianchi",
+      "linkedin":"https://it.linkedin.com/in/bianchigiuseppe",
+      "codepen":"http://codepen.io/giuseppebianchi/"
+   },
+   "docs":{
+      "cv_url": "https://zety.com/mycv/giuseppebianchi",
+      "resume_url": "https://zety.com/mycv/giuseppebianchi"
+   },
+   "education":[
+      {
+         "name":"Bachelor in Computer Science",
+         "location": "University of L'Aquila, Italy",
+         "date": "In Course",
+         "description": ""
+
+      },
+      {
+         "name": "Secondary School Diploma in IT",
+         "location": "ITIS Ettore Majorana, Avezzano (AQ), Italy",
+         "date": "2011 - 3.48 GPA",
+         "description": "Diploma Perito Informatico"
+      }
+   ],
+   "skills":[],
+   "work": {
+      "current": {
+         "company":"mynameisbianchi",
+         "link": "",
+         "subject": "Frontend Development",
+         "date": "In Course",
+         "resource": "",
+         "description": "Frontend Development"
+      },
+      "cv":[{
+            "company":"GSSI - Gran Sasso Science Institute",
+            "location": "L'Aquila, Italy",
+            "link": "http://www.gssi.it",
+            "company_works":[{
+               "subject": "Full Stack Developer",
+               "date": "Feb 2019 - Current",
+               "resource": "",
+               "description": "Web/Mobile App Development and IT Solutions"
+            }]
+
+         },{
+            "company":"University of L'Aquila",
+            "location": "L'Aquila, Italy",
+            "link": "http://www.disim.univaq.it",
+            "company_works":[{
+               "subject": "Frontend Development",
+               "date": "April 2016 - Jenuary 2017",
+               "resource": "http://www.mdeforge.org/",
+               "description": "<strong>MDE Forge</strong> Research Project.</a>"
+            },
+            {
+               "subject": "Mobile App UI Design and Front-End Development",
+               "date": "December 2014 - June 2015",
+               "resource": "",
+               "description": "Abruzzo per <strong>Expo</strong> - Web Application and Mobile App based on Apache Cordova."
+            }]
+
+         },
+         {
+            "company":"ReMedia Italia",
+            "location": "Rome, Italy",
+            "link": "http://www.remediagroup.it/",
+            "company_works":[{
+               "subject": "Frontend Development",
+               "date": "March 2016",
+               "resource": "http://eoopenscience2016.esa.int/",
+               "description": "I've upgraded a <strong>ESA</strong> webpage, adding Javascript animations."
+            },
+            {
+               "subject": "Frontend and Mobile Development",
+               "date": "October 2015 - November 2015",
+               "resource": "http://www.remediagroup.it/ned/?portfolio=the-alphabet-of-the-univers",
+               "description": "Building views and mini-games by using CSS3, JS and HTML5 for The Alphabet of the Universe, a touch-book for <strong>CERN</strong>.<br>Then I made an animation by using CSS3, JS and HTML5 for <strong>ESA</strong>."
+            },
+            {
+               "subject": "Mobile App Development",
+               "date": "May 2015 - August 2015",
+               "resource": "",
+               "description": "Upgrading Frascati Scienza App. Adds: Share Buttons, <br>Multi-Language, Notification System."
+            },
+            {
+               "subject": "Frontend Development",
+               "date": "May 2015",
+               "resource": "http://www.remediagroup.it/ned/?portfolio=edipro",
+               "description": "Edipro presentation website to show features about moving to a digital solution."
+            }]
+         }
+
+      ],
+      "projects":[
+         {
+            "id":""
+         }
+      ],
+      "blog":[
+         {
+            "id": ""
+         }
+      ]
+   },
+   "projects":[{
+      "name": "LOUD",
+      "url_name": "loud",
+      "subtitle": "iOS App to classify, manage and listen to your favorite music on SoundCloud",
+      "category": "Mobile App | Apache Cordova",
+      "resource": "https://github.com/giuseppebianchi/loud",
+      "img": "/projects/loud/LOUD_cover.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/projects/loud.html"
+   },
+   {
+      "name": "mynameisbianchi.it",
+      "url_name": "mynameisbianchi",
+      "subtitle": "My works, my experiences, my ideas",
+      "category": "NodeJS - ExpressJS Web App",
+      "resource": "https://github.com/giuseppebianchi/loud",
+      "img": "/projects/mynameisbianchi/MRF1628S9A.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/projects/mynameisbianchi.html"
+   },
+   {
+      "name": "Planner Path Calculator",
+      "url_name": "ppc",
+      "subtitle": "The problem to resolve for my Software Engineering Course",
+      "category": "NodeJS - ExpressJS App | MongoDB",
+      "resource": "https://github.com/giuseppebianchi/loud",
+      "img": "/projects/ppc/SA07EZX8KU.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/projects/ppc.html"
+   },
+   {
+      "name": "Social Develop",
+      "url_name": "socialdevelop",
+      "subtitle": "A Web Application I built for my Web Engineering Course, where developers can join and collaborate on projects",
+      "category": "J2EE | MySQL",
+      "resource": "https://github.com/giuseppebianchi/SocialDevelop",
+      "img": "/projects/socialdevelop/cover.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/projects/socialdevelop.html"
+   }],
+   "stories":[{
+      "name": "The Exception",
+      "url_name": "theexception",
+      "subtitle": "",
+      "category": "Life",
+      "img": "/stories/theexception/sun.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/stories/theexception.html"
+   },
+   {
+      "name": "The 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere.",
+      "url_name": "theexception",
+      "subtitle": "",
+      "category": "Life",
+      "img": "/stories/theexception/sun.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/stories/theexception.html"
+   },
+   {
+      "name": "The 3",
+      "url_name": "theexception",
+      "subtitle": "",
+      "category": "Life",
+      "img": "/stories/theexception/sun.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/stories/theexception.html"
+   },
+   {
+      "name": "The 4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere.",
+      "url_name": "theexception",
+      "subtitle": "",
+      "category": "Life",
+      "img": "/stories/theexception/sun.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/stories/theexception.html"
+   },
+   {
+      "name": "The 5",
+      "url_name": "theexception",
+      "subtitle": "",
+      "category": "Life",
+      "img": "/stories/theexception/sun.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/stories/theexception.html"
+   },
+   {
+      "name": "The 6",
+      "url_name": "theexception",
+      "subtitle": "",
+      "category": "Life",
+      "img": "/stories/theexception/sun.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper scelerisque lectus placerat posuere. Pellentesque feugiat metus ac diam finibus, et commodo nunc interdum. In hac habitasse platea dictumst. Nulla facilisis cursus purus nec tempor. Sed enim risus, varius ac tincidunt non, mattis sed lectus.",
+      "html_body": "views/html/stories/theexception.html"
+   }],
+   "blog":[{
+
+   }]
+}

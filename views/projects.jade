@@ -1,0 +1,49 @@
+extends layout
+
+block content
+    #video_element(style="height:80%")
+      .huge-title
+        .col-sm-12
+          h1.title-page Projects
+          p My portfolio. The projects I made by myself.
+      .shade
+  
+      #background(style="background-image: url(/img/projects.jpg);")
+     
+    .wrapper
+      
+      .container0(style="background:#fff")
+        section#ProjectList
+          .content.centered
+            p These are my personal projects. You can find them also on my GitHub repositories.
+            p To see my works check  
+              a.link(href="/about") About Me
+              |  page, where you can find my work 
+              a.link(href="/about#Experience") Eperiences
+              |  and 
+              a.link(href="/about#Skills") Skills
+              | .
+            a.button-reverse(href="https://github.com/giuseppebianchi/", target="_blank")
+              i.icon-github-circled
+              |  GITHUB
+          hr.no-color
+          .content
+            each item, index in Projects
+              .project-item
+                a(href="/projects/" + item.url_name)
+                  .project-item-img.b-lazy(data-src=item.img)
+                    .project-item-img-overlay
+                      .plaject-item-overlay
+                        h3=item.name
+                        h4=item.category
+              hr
+        // End of Content
+        .parallax1
+          // Start Content
+          .content.centered
+            p These are my personal projects. To see my works check  
+              a.link(href="/about") About Me
+              |  page, where you can find my experiences and skills.
+            a.button-reverse(href="#", target="_blank") Download Resume
+            a.button-reverse(href="#", target="_blank") Download CV
+        // End of Content
